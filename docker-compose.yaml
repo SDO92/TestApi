@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  testapi:
+    container_name: testapi-app
+    image: testapi-webapp:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "8080:8080"
